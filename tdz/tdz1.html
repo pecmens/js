@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TDZ test one</title>
+</head>
+<body>
+	<script>
+		function test() {
+			var foo = 33;
+			if (foo) {
+				let foo = (foo + 55);
+			}
+		}
+		alert(test());
+	</script>
+</body>
+</html>
