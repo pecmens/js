@@ -26,41 +26,27 @@ function digitize(data) {
         let temp_c = "";
         const arr_n = new Array();
         const arr_c = new Array();
-        console.log("It's string!")
+        // console.log("It's string!")
 
         for (let i = 0; i < data.length; i++) {
-            if (isNaN(data.slice(i, i+1)) && (data.slice(i, i+1) in chars || data.slice(i, i+1) in symbols)) {
-                if (isNaN(data.slice(i+1, i+2)) && (data.slice(i+1, i+2) in chars || data.slice(i+1, i+2) in symbols)) {
+            if (isNaN(data.slice(i, i+1)) && (chars.includes(data.slice(i, i+1)) || (symbols.includes(data.slice(i, i+1))))) {
+                if (isNaN(data.slice(i+1, i+2)) && (chars.includes(data.slice(i+1, i+2))|| (symbols.includes(data.slice(i, i+1))))) {
                     temp_c += data.slice(i, i+1);
-                    console.log("A");
-                } else if (!(isNaN(data.slice(i+1, i+2))) && (!(data.slice(i+1, i+2) in chars) || !(data.slice(i+1, i+2) in symbols))) {
+                } else if (!(isNaN(data.slice(i+1, i+2))) && (!(chars.includes(data.slice(i+1, i+2))) || !(symbols.includes(data.slice(i, i+1))))) {
                     temp_c += data.slice(i, i+1);
                     arr_c.push(temp_c);
                     temp_c = "";
-                    console.log("B");
-                } else {
-                    console.log("abc");
-                } 
-            } else if (!(isNaN(data.slice(i, i+1))) && (!(data.slice(i, i+1) in chars) || !(data.slice(i, i+1) in symbols)) && (data.slice(i, i+1) in number_digit || data.slice(i, i+1) in string_digit)) {
-                if (!(isNaN(data.slice(i+1, i+2))) && (!(data.slice(i+1, i+2) in chars) || !(data.slice(i+1, i+2) in symbols)) && (data.slice(i+1, i+2) in number_digit || data.slice(i+1, i+2) in string_digit)) {
+                }
+            } else if (!(isNaN(data.slice(i, i+1))) && (!(chars.includes(data.slice(i, i+1))) || !(symbols.includes(data.slice(i, i+1)))) && (number_digit.includes(data.slice(i, i+1)) || string_digit.includes(data.slice(i, i+1)))) {
+                if (!(isNaN(data.slice(i+1, i+2))) && (!(chars.includes(data.slice(i+1, i+2))) || !(symbols.includes(data.slice(i+1, i+2)))) && (number_digit.includes(data.slice(i+1, i+2)) || string_digit.includes(data.slice(i+1, i+2)))) {
                     temp_n += data.slice(i, i+1).toString();
-                    console.log("C");
-                } else if (isNaN(data.slice(i+1, i+2)) && (data.slice(i+1, i+2) in chars || data.slice(i+1, i+2) in symbols) && (!(data.slice(i+1, i+2) in number_digit) || !(data.slice(i+1, i+2) in string_digit))) {
+                } else if (isNaN(data.slice(i+1, i+2)) && (chars.includes(data.slice(i+1, i+2) || symbols.includes(data.slice(i+1, i+2))) && (!(number_digit.includes(data.slice(i+1, i+2))) || !(string_digit.includes(data.slice(i+1, i+2)))))) {
                     temp_n += data.slice(i, i+1).toString();
                     arr_n.push(Number(temp_n));
                     temp_n = 0;
-                    console.log("D");
-                } else {
-                    console.log("ABC");
                 }
-            } else if (isNaN(data.slice(i, i+1))) {
-                console.log("BabiQ");
-            } else {
-                console.log("BBQ");
             }
 
-            // console.log(arr_n);
-            // console.log(arr_c);
         }
 
         if (arr_n.length === arr_c.length && isNaN(data.slice(0, 1))) {
@@ -74,20 +60,27 @@ function digitize(data) {
             values["Null"] = arr_n[0];
             values[arr_c[arr_c.length - 1]] = "Null";
         } else if (arr_n.length !== arr_c.length) {
-            values["Char"] = temp_c;
-            values["Number"] = temp_n;
+            values["Char"] = arr_c;
+            values["Number"] = arr_n;
+
+            if (arr_n.length > arr_c.length) {
+                let total = arr_n.length - arr_c.length;
+                console.log("Number-123 is biggest! than " + total.toString());
+            } else if (arr_n.length < arr_c.length) {
+                let total = arr_c.length - arr_n.length;
+                console.log("String-ABC is biggest! than " + total.toString());
+            }
+
         } else {
             console.log("Have Error!");
         }
 
-        // console.log(arr_n);
-        // console.log(arr_c);
     }
 
     return values;
 }
 
-// let data = "A1B2C3D4E5";
-let data = "b024pe352t9z00se9x68c8f";
+let data = "A1B2C3D4E5";
+// let data = "b024pe352t9z00se9x68c8f";
 
 console.log(digitize(data));
