@@ -41,3 +41,4 @@ console.log(kkks === kkkss);
 console.log(kkks in chars);
 
 console.log(chars.includes(num.slice(0, 1)));
+

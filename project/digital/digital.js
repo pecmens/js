@@ -36,18 +36,32 @@ function digitize(data) {
                     temp_c += data.slice(i, i+1);
                     arr_c.push(temp_c);
                     temp_c = "";
+                } else {
+                    console.log(i + " str Errors")
                 }
             } else if (!(isNaN(data.slice(i, i+1))) && (!(chars.includes(data.slice(i, i+1))) || !(symbols.includes(data.slice(i, i+1)))) && (number_digit.includes(data.slice(i, i+1)) || string_digit.includes(data.slice(i, i+1)))) {
+                console.log(i + " is OK-1");
                 if (!(isNaN(data.slice(i+1, i+2))) && (!(chars.includes(data.slice(i+1, i+2))) || !(symbols.includes(data.slice(i+1, i+2)))) && (number_digit.includes(data.slice(i+1, i+2)) || string_digit.includes(data.slice(i+1, i+2)))) {
                     temp_n += data.slice(i, i+1).toString();
+                    console.log(i + " is OK-2");
                 } else if (isNaN(data.slice(i+1, i+2)) && (chars.includes(data.slice(i+1, i+2) || symbols.includes(data.slice(i+1, i+2))) && (!(number_digit.includes(data.slice(i+1, i+2))) || !(string_digit.includes(data.slice(i+1, i+2)))))) {
                     temp_n += data.slice(i, i+1).toString();
                     arr_n.push(Number(temp_n));
                     temp_n = 0;
+                    console.log(i + " is OK-3");
+                } else if (i === data.length - 1 && !(isNaN(data.slice(i+1, i+2)))) {
+                    temp_n += data.slice(i, i+1).toString();
+                    arr_n.push(Number(temp_n));
+                    console.log(i + " is OK-4"); // I don't know what's funking happened, last element is Number was a error.
+                } else {
+                    console.log(i + " num Errors");
                 }
             }
 
         }
+
+        console.log(arr_n);
+        console.log(arr_c);
 
         if (arr_n.length === arr_c.length && isNaN(data.slice(0, 1))) {
             for (let j = 0; j < arr_c.length; j++) {
@@ -55,7 +69,7 @@ function digitize(data) {
             }
         } else if (arr_n.length === arr_c.length && !(isNaN(data.slice(0, 1)))) {
             for (let k = 0; k < arr_n.length - 1; k++) {
-                values[arr_c[k]] = arr_n[j + 1];
+                values[arr_c[k]] = arr_n[k + 1];
             }
             values["Null"] = arr_n[0];
             values[arr_c[arr_c.length - 1]] = "Null";
@@ -80,7 +94,9 @@ function digitize(data) {
     return values;
 }
 
-let data = "A1B2C3D4E5";
+// let data = "A1B2C3D4E5";
+// let data = "1A2B3C4D5E";
 // let data = "b024pe352t9z00se9x68c8f";
+let data = "024pe352t9z00se9x68c8";
 
 console.log(digitize(data));
