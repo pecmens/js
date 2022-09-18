@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clean Sentences</title>
+    <link type="text/css" href="./main.css" />
+    <script src="mains.js"></script>
+</head>
+<body>
+    <div id="main">
+        <form>
+            <label>
+                Please input original text:
+                <br />
+                <textarea id="textarea_main" name="textareas" rows="20" cols="50" placeholder="Please input original text"></textarea>
+                <br />
+                <button type="button" name="conform" value="Conform" id="execute_button" onclick="executive();">Conform</button>
+                <button type="button" name="clean" value="Reset" id="reset_button" onclick="clean_do();">Clean</button>
+                <br />
+                <br />
+                <textarea id="new_text" name="new_textareas" rows="20" cols="50" style="display: none;"></textarea>
+            </label>
+        </form>
+    </div>
+</body>
+</html>
