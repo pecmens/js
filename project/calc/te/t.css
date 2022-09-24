@@ -1,0 +1,88 @@
+* html body {
+    margin: 0;
+    padding: 0;
+}
+
+#box-outer {
+    display: block;
+    text-align: center;
+    width: 600px;
+    height: 800px;
+    border: dodgerblue solid 2px;
+    margin: 0 auto;
+}
+
+#box-inner {
+    width: 538px;
+    height: 738px;
+    border: cadetblue solid 2px;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+.bu {
+    width: 150px;
+    height: 150px;
+    border: deepskyblue solid 1px;
+    border-radius: 20px;
+    line-height: 150px;
+    margin: 10px 10px 10px 10px;
+    font-size: 80px;
+}
+
+.bu:hover {
+    background-color: deepskyblue;
+    color: antiquewhite;
+    box-shadow: 5px 5px 5px -2px burlywood;
+}
+
+.fs {
+    display: inline-block;
+    float: left;
+}
+
+.thr {
+    display: inline-block;
+    float: left;
+}
+
+.t1 {
+    margin-top: 24px;
+}
+
+.t2 {
+    margin-top: 14px;
+}
+
+.b1 {
+    margin-bottom: 24px;
+}
+
+.b2 {
+    margin-bottom: 14px;
+}
+
+.l1 {
+    margin-left: 20px;
+}
+
+.l2 {
+    margin-left: 10px;
+}
+
+.r1 {
+    margin-right: 20px;
+}
+
+.r2 {
+    margin-right: 10px;
+}
+
+
+#zeros {
+    width: 322px;
+    height: 150px;
+    display: inline-block;
+    float: left;
+
+}
