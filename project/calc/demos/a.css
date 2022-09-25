@@ -45,6 +45,8 @@ body {
     overflow-x: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    /*limited maximum height*/
+    max-height: 30px;
 }
 
 .output pre::-webkit-scrollbar {
@@ -54,6 +56,8 @@ body {
 .output #upper {
     color: #424242;
     font-size: 18px;
+    /*limited maximum height*/
+    max-height: 20px;
 }
 
 .input {

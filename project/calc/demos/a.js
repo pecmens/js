@@ -57,8 +57,16 @@ function pressDot() {
     outputLower.innerHTML += '.';
 }
 
+// function pressBracket(e) {
+//     outputLower.innerHTML += e.innerHTML;
+// }
+
 function pressBracket(e) {
-    outputLower.innerHTML += e.innerHTML;
+    if (outputLower.innerHTML === '0') {
+        outputLower.innerHTML = e.innerHTML;
+    } else {
+        outputLower.innerHTML += e.innerHTML;
+    }
 }
 
 // attach keyboard event
