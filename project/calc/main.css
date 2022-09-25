@@ -2,3 +2,91 @@
     margin: 0;
     padding: 0;
 }
+
+#outer-border {
+    display: block;
+    width: 620px;
+    height: 820px;
+    border: 2px solid #222;
+    margin: 0 auto;
+}
+
+#inner-border {
+    width: 600px;
+    height: 800px;
+    display: block;
+    overflow: hidden;
+    text-align: center;
+    margin: 10px;
+}
+
+#screens {
+    width: 556px;
+    height: 146px;
+    display: block;
+    border: 2px solid #000;
+    margin: 20px;
+}
+
+#select-button {
+    width: 556px;
+    height: 56px;
+    border: 2px solid #000;
+    margin: 20px;
+}
+
+#keyboard-a {
+    width: 556px;
+    height: 506px;
+    border: 2px solid #999;
+    margin: 20px;
+}
+
+.bu {
+    display: inline-block;
+    width: 110px;
+    height: 81px;
+    border: 2px solid #999;
+    border-radius: 20px;
+    margin: 5px;
+    line-height: 81px;
+    font-size: 30px;
+}
+
+.bu:hover {
+    box-shadow: 5px 5px 5px -4px burlywood;
+    background: deepskyblue;
+    color: #fff;
+    border-color: deepskyblue;
+}
+
+.bu:active {
+    box-shadow: 5px 5px 5px -4px burlywood;
+    background: darkblue;
+    color: #3e2;
+    border-color: darkblue;
+}
+
+.top_b {
+    margin-top: 20px;
+}
+
+.bottom_b {
+    margin-bottom: 20px;
+}
+
+.left_b {
+    margin-left: 20px;
+}
+
+.right_b {
+    margin-right: 20px;
+}
+
+.center_b {
+    /*margin: 10px;*/
+}
+
+#zeros_button {
+    width: 240px;
+}
