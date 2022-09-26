@@ -4,20 +4,36 @@
         <meta charset="utf-8" />
         <title>Digit Han</title>
         <link rel="stylesheet" type="text/css" href="./main.css" />
-        <script type="text/javascript" src="./main.js"></script>
+        <!-- <script type="text/javascript" src="./main.js"></script> -->
     </head>
     
     <body>
         <div id="main">
             <div id="container">
-                <div id="top_screen">
-
-                </div>
+                <div id="top_screen"></div>
                 
-                <div id="bottom_screen">
+                <div id="bottom_screen">0</div>
 
+                <div id="keyboards">
+                    <button class="buttons tb lb" onclick="press(this);">亿</button>
+                    <button class="buttons tb" onclick="press(this);">7</button>
+                    <button class="buttons tb" onclick="press(this);">8</button>
+                    <button class="buttons tb rb" onclick="press(this);">9</button>
+                    <button class="buttons lb" onclick="">万</button>
+                    <button class="buttons " onclick="press(this);">4</button>
+                    <button class="buttons " onclick="press(this);">5</button>
+                    <button class="buttons rb" onclick="press(this);">6</button>
+                    <button class="buttons lb" onclick="">百</button>
+                    <button class="buttons " onclick="press(this);">1</button>
+                    <button class="buttons " onclick="press(this);">2</button>
+                    <button class="buttons rb" onclick="press(this);">3</button>
+                    <button class="buttons bb lb" onclick="">千</button>
+                    <button class="buttons bb" onclick="">十</button>
+                    <button class="buttons bb" onclick="press(this);">0</button>
+                    <button class="buttons rb bb" onclick="clean();">Enter</button>
                 </div>
             </div>
         </div>
+        <script type="text/javascript" src="./main.js"></script>
     </body>
 </html>
